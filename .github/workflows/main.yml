@@ -50,3 +50,4 @@ jobs:
           prerelease: false
           generate_release_notes: true # Auto-generates changelogs
           files: ${{ steps.sign_app.outputs.signedReleaseFile }}
+
