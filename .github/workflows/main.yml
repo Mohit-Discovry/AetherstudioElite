@@ -1,19 +1,52 @@
-- name: APK action
-  # You may pin to the exact commit or the version.
-  # uses: WaterLemons2k/apk-action@6872ea1c0a08c2646b5a9cfd7d5262659050c0ff
-  uses: WaterLemons2k/apk-action@v1.1.2
-  with:
-    # Contents of the keystore file (.jks), base64 encoded
-    keystore: 
-    # Password of the keystore
-    keystore-password: 
-    # Alias of the key
-    key-alias: 
-    # Password of the key
-    key-password: 
-    # The Java version to set up
-    java-version: # optional
-    # The arguments passed to Gradle
-    gradle-args: # optional, default is --no-daemon
-    # Build a release or debug APK
-    release: # optional, default is true
+name: Build & Release Android APK
+
+on:
+  push:
+    tags:
+      - 'v*.*.*' # Triggers only when a semantic version tag is pushed
+
+permissions:
+  contents: write # Required to create a release and upload assets
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'gradle'
+
+      - name: Grant Execute Permission for Gradlew
+        run: chmod +x ./gradlew
+
+      - name: Build Release APK
+        run: ./gradlew assembleRelease
+
+      # Signs the built APK with your production keystore
+      - name: Sign Release APK
+        id: sign_app
+        uses: r0adkll/sign-android-release@v1
+        with:
+          releaseDirectory: app/build/outputs/apk/release
+          signingKeyBase64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          alias: ${{ secrets.ANDROID_KEYSTORE_ALIAS }}
+          keyStorePassword: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          keyPassword: ${{ secrets.ANDROID_KEY_PASSWORD }}
+
+      # Creates the GitHub Release and uploads the signed APK automatically
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Release ${{ github.ref_name }}
+          tag_name: ${{ github.ref }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true # Auto-generates changelogs
+          files: ${{ steps.sign_app.outputs.signedReleaseFile }}
