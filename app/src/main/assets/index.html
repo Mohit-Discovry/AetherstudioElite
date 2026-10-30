@@ -2979,6 +2979,459 @@
     .ai-blend-modal.hidden {
       display: none !important;
     }
+
+    /* ==========================================================================
+       CYBERPUNK GLASSMORPHISM LEVITATING STUDIO POD & IBIS PAINT COLOR STUDIO
+       ========================================================================== */
+    .studio-top-pod {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      height: 52px;
+      background: rgba(12, 15, 28, 0.84);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border: 1px solid rgba(6, 182, 212, 0.35);
+      border-radius: 20px;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.75), 0 0 20px rgba(6, 182, 212, 0.25), 0 0 35px rgba(139, 92, 246, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      z-index: 95;
+      user-select: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .studio-top-pod:hover {
+      border-color: rgba(6, 182, 212, 0.55);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8), 0 0 25px rgba(6, 182, 212, 0.35), 0 0 45px rgba(139, 92, 246, 0.25);
+    }
+
+    .pod-brand-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .pod-brand-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      box-shadow: 0 0 14px rgba(6, 182, 212, 0.5);
+    }
+
+    .pod-title-pill {
+      font-size: 13px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.2px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pod-save-indicator {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 12px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .pod-save-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #34d399;
+      box-shadow: 0 0 6px #34d399;
+      animation: pulseSave 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseSave {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .pod-controls-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pod-icon-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.16s ease;
+      position: relative;
+    }
+
+    .pod-icon-btn:hover {
+      background: rgba(6, 182, 212, 0.18);
+      border-color: rgba(6, 182, 212, 0.45);
+      color: #06b6d4;
+      box-shadow: 0 0 12px rgba(6, 182, 212, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .pod-icon-btn.active {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.3), rgba(139, 92, 246, 0.3));
+      border-color: #06b6d4;
+      color: #fff;
+      box-shadow: 0 0 16px rgba(6, 182, 212, 0.45);
+    }
+
+    .pod-divider {
+      width: 1px;
+      height: 22px;
+      background: rgba(255, 255, 255, 0.12);
+      margin: 0 4px;
+    }
+
+    .pod-pill-btn {
+      height: 34px;
+      padding: 0 14px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      border: 1px solid transparent;
+    }
+
+    .pod-btn-ai {
+      background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(139, 92, 246, 0.25));
+      border-color: rgba(236, 72, 153, 0.45);
+      color: #f472b6;
+      box-shadow: 0 0 16px rgba(236, 72, 153, 0.25);
+    }
+
+    .pod-btn-ai:hover {
+      background: linear-gradient(135deg, rgba(236, 72, 153, 0.35), rgba(139, 92, 246, 0.4));
+      border-color: #ec4899;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .pod-btn-publish {
+      background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 4px 18px rgba(6, 182, 212, 0.4);
+    }
+
+    .pod-btn-publish:hover {
+      box-shadow: 0 6px 24px rgba(6, 182, 212, 0.6);
+      transform: translateY(-1px);
+    }
+
+    /* Levitating Left Dock */
+    .studio-left-dock {
+      position: absolute;
+      top: 72px;
+      left: 10px;
+      bottom: 12px;
+      width: 68px;
+      background: rgba(12, 15, 28, 0.86);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border: 1px solid rgba(6, 182, 212, 0.35);
+      border-radius: 20px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75), 0 0 22px rgba(6, 182, 212, 0.2), 0 0 35px rgba(139, 92, 246, 0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 4px;
+      gap: 6px;
+      z-index: 95;
+      overflow-y: auto;
+      overflow-x: hidden;
+      scrollbar-width: none;
+      user-select: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .studio-left-dock::-webkit-scrollbar {
+      display: none;
+    }
+
+    .studio-left-dock:hover {
+      border-color: rgba(6, 182, 212, 0.55);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.8), 0 0 26px rgba(6, 182, 212, 0.3);
+    }
+
+    .dock-category-tag {
+      font-size: 8px;
+      font-weight: 800;
+      color: rgba(6, 182, 212, 0.8);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin: 4px 0 2px 0;
+      text-align: center;
+    }
+
+    .dock-tool-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 13px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #94a3b8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      position: relative;
+    }
+
+    .dock-tool-btn:hover {
+      background: rgba(6, 182, 212, 0.16);
+      border-color: rgba(6, 182, 212, 0.45);
+      color: #06b6d4;
+      box-shadow: 0 0 14px rgba(6, 182, 212, 0.3);
+      transform: scale(1.05);
+    }
+
+    .dock-tool-btn.active {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.3), rgba(139, 92, 246, 0.35));
+      border-color: #06b6d4;
+      color: #fff;
+      box-shadow: 0 0 16px rgba(6, 182, 212, 0.5), inset 0 0 8px rgba(6, 182, 212, 0.3);
+    }
+
+    .dock-color-disc {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0 0 14px rgba(6, 182, 212, 0.6);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.18s ease;
+    }
+
+    .dock-color-disc:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.85);
+    }
+
+    .dock-alpha-badge {
+      font-size: 8px;
+      font-weight: 800;
+      color: #06b6d4;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1px 4px;
+      border-radius: 6px;
+      margin-top: 2px;
+    }
+
+    /* Flyout Shelves for Advanced Controls */
+    .dock-flyout-shelf {
+      position: absolute;
+      left: 78px;
+      background: rgba(14, 18, 34, 0.94);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border: 1px solid rgba(6, 182, 212, 0.4);
+      border-radius: 18px;
+      padding: 12px;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8), 0 0 24px rgba(6, 182, 212, 0.25);
+      z-index: 100;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      animation: bannerSlideIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .dock-flyout-shelf.show {
+      display: flex;
+    }
+
+    /* Ibis Paint Color Studio Levitating Window */
+    #ibis-color-studio {
+      position: fixed;
+      top: 76px;
+      left: 86px;
+      width: 320px;
+      background: rgba(11, 14, 26, 0.94);
+      backdrop-filter: blur(32px);
+      -webkit-backdrop-filter: blur(32px);
+      border: 1px solid rgba(6, 182, 212, 0.45);
+      border-radius: 22px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85), 0 0 30px rgba(6, 182, 212, 0.3), 0 0 50px rgba(139, 92, 246, 0.2);
+      z-index: 150;
+      display: none;
+      flex-direction: column;
+      padding: 16px;
+      gap: 12px;
+      user-select: none;
+      animation: bannerSlideIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .ibis-wheel-container {
+      position: relative;
+      width: 220px;
+      height: 220px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #ibis-hue-wheel-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      cursor: crosshair;
+    }
+
+    #ibis-sat-val-canvas {
+      position: relative;
+      z-index: 2;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+      cursor: crosshair;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .ibis-wheel-cursor {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 6px #000;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+    }
+
+    .ibis-sat-cursor {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 5px #000;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 6;
+    }
+
+    /* Checkerboard pattern for transparency slider */
+    .transparency-checkerboard {
+      background-color: #1e202e;
+      background-image: linear-gradient(45deg, #2a2d40 25%, transparent 25%),
+                        linear-gradient(-45deg, #2a2d40 25%, transparent 25%),
+                        linear-gradient(45deg, transparent 75%, #2a2d40 75%),
+                        linear-gradient(-45deg, transparent 75%, #2a2d40 75%);
+      background-size: 10px 10px;
+      background-position: 0 0, 0 5px, 5px -5px, -5px 0px;
+      border-radius: 8px;
+    }
+
+    .ibis-transparency-slider-track {
+      position: relative;
+      width: 100%;
+      height: 24px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .ibis-transparency-gradient {
+      position: absolute;
+      inset: 0;
+      border-radius: 8px;
+    }
+
+    .ibis-slider-input {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .ibis-color-comparison {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0, 0, 0, 0.35);
+      padding: 8px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .ibis-swatch-split {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      overflow: hidden;
+      display: flex;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .ibis-swatch-half {
+      flex: 1;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .ibis-quick-swatches-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 6px;
+      max-height: 80px;
+      overflow-y: auto;
+      padding: 4px 0;
+    }
+
+    .ibis-swatch-chip {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 7px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      transition: transform 0.12s ease;
+    }
+
+    .ibis-swatch-chip:hover {
+      transform: scale(1.15);
+      border-color: #06b6d4;
+      box-shadow: 0 0 10px #06b6d4;
+    }
   </style>
 </head>
 <body>
@@ -3437,267 +3890,259 @@
     </div>
   </div>
 
-  <!-- Top Global Action Header -->
-  <header id="header-bar" class="glass-panel">
-    <div class="brand-section">
-      <!-- Back to Home Button -->
-      <button class="btn btn-icon-only" onclick="confirmExitToHome()" title="Return to Projects Hub (Home)" style="margin-right: 2px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+  <!-- Top Levitating Squircle Pod (Cyberpunk Glassmorphism) -->
+  <header id="studio-top-pod" class="studio-top-pod">
+    <div class="pod-brand-badge" onclick="confirmExitToHome()" title="Return to Projects Hub (Home)">
+      <div class="pod-brand-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
         </svg>
-      </button>
-
-      <div style="display: flex; align-items: center; gap: 8px; cursor: pointer;" onclick="resetCanvasTransform()">
-        <div class="brand-icon">
-          <!-- Lucide Sparkle/Pen vector icon -->
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
-          </svg>
-        </div>
-        <div class="brand-title">
-          <span id="active-project-title-header">AetherStudio</span>
-          <span class="brand-badge">Elite</span>
+      </div>
+      <div class="pod-title-pill">
+        <span id="active-project-title-header">AetherStudio Elite</span>
+        <div class="pod-save-indicator" onclick="event.stopPropagation(); triggerManualAutoSave()" title="Auto-saved to device storage. Click to save now.">
+          <span class="pod-save-dot"></span>
+          <span>SAVED</span>
         </div>
       </div>
     </div>
 
-    <!-- Center Layout & Asset Import Controls -->
-    <div class="header-center-tools">
-      <button class="btn btn-primary" onclick="openDesignHubModal()" title="Canva, Figma, Photoshop & Macros">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-          <polyline points="7 10 12 15 17 10"/>
-          <line x1="12" x2="12" y1="15" y2="3"/>
-        </svg>
-        <span>Import Design Hub Asset</span>
+    <!-- Center Control Pod Section -->
+    <div class="pod-controls-group">
+      <!-- Undo / Redo -->
+      <button class="pod-icon-btn" onclick="undo()" title="Undo (Ctrl+Z)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"/></svg>
+      </button>
+      <button class="pod-icon-btn" onclick="redo()" title="Redo (Ctrl+Y)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 7v6h-6"/><path d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7"/></svg>
       </button>
 
-      <button class="btn btn-ai" onclick="runAIBGRemove()" title="Smart Color Channel Extraction & Edge Refinement">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="6" cy="6" r="3"/>
-          <path d="M8.12 8.12 12 12"/>
-          <path d="M20 4 8.12 15.88"/>
-          <circle cx="6" cy="18" r="3"/>
-          <path d="M14.8 14.8 20 20"/>
-        </svg>
-        <span>AI BG Remove</span>
+      <div class="pod-divider"></div>
+
+      <!-- Navigation & Transform -->
+      <button class="pod-icon-btn" onclick="adjustZoom(-0.15)" title="Zoom Out (-)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+      <button class="pod-icon-btn" onclick="resetCanvasTransform()" title="Reset Canvas 100% Fit"><span style="font-size: 10px; font-weight: 800;">100%</span></button>
+      <button class="pod-icon-btn" onclick="adjustZoom(0.15)" title="Zoom In (+)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+      <button class="pod-icon-btn" onclick="resetCanvasRotation()" title="Reset 0° Rotation"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg></button>
+
+      <div class="pod-divider"></div>
+
+      <!-- Symmetry Guide Hub -->
+      <button id="pod-sym-btn" class="pod-icon-btn" onclick="cycleSymmetryMode()" title="Toggle Symmetry (Off / Mirror X / Mirror Y / Radial 8x)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="22"/><path d="M5 8l7-4 7 4M5 16l7 4 7-4"/></svg>
       </button>
 
-      <!-- Stabilizer Brush Selector (Ibis Paint Evolved) -->
-      <div style="display: flex; align-items: center; gap: 4px; background: rgba(0,0,0,0.3); padding: 3px 8px; border-radius: var(--radius-md); border: 1px solid var(--glass-border);">
-        <span style="font-size: 11px; color: var(--text-muted); font-weight: 600;">Stabilizer</span>
-        <select id="stabilizer-select" class="select-dropdown" style="width: 70px; height: 26px; border: none; background: transparent;" onchange="setStabilization(this.value)">
-          <option value="0">Off</option>
-          <option value="2">Low (2)</option>
-          <option value="5" selected>Med (5)</option>
-          <option value="8">High (8)</option>
-          <option value="10">Max (10)</option>
-        </select>
-      </div>
+      <!-- Snapping Grid & Rulers -->
+      <button id="pod-grid-btn" class="pod-icon-btn" onclick="toggleCanvasGridOverlay()" title="Toggle Snapping Pixel Grid (#)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+      </button>
+      <button id="pod-rulers-btn" class="pod-icon-btn" onclick="toggleCanvasRulers()" title="Toggle Alignment Guides & Rulers (R)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/></svg>
+      </button>
     </div>
 
-    <!-- Right Global Action Items -->
-    <div class="header-right-tools">
-      <!-- Figma Collaborative Live Mode Toggle Button with Avatars -->
-      <button id="btn-figma-live-toggle" class="btn" onclick="toggleFigmaCollaborativeMode()" title="Toggle Figma Collaborative Multi-Artist Live Mode">
-        <div class="figma-avatar-stack">
-          <div class="figma-user-pill" style="background: #06b6d4;">You</div>
-          <div class="figma-user-pill" style="background: #ec4899;">M</div>
-          <div class="figma-user-pill" style="background: #fbbf24;">R</div>
-        </div>
-        <span id="figma-live-label" style="font-size: 11px; font-weight: 600;">Figma Live</span>
+    <!-- Right Control Pod Section -->
+    <div class="pod-controls-group">
+      <button class="pod-pill-btn pod-btn-ai" onclick="openGeminiArtCoach()" title="Gemini AI Vision Coach & Diagnostics">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2a8 8 0 0 0-8 8c0 3.37 2.11 6.27 5.12 7.4.3.06.59.18.88.35V20a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2v-2.25c.29-.17.58-.29.88-.35A8.003 8.003 0 0 0 20 10a8 8 0 0 0-8-8Z"/></svg>
+        <span>Gemini AI</span>
       </button>
 
-      <button class="btn btn-icon-only" onclick="undo()" title="Undo (Ctrl+Z)">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"/>
-        </svg>
-      </button>
-      <button class="btn btn-icon-only" onclick="redo()" title="Redo (Ctrl+Y)">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 7v6h-6"/><path d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7"/>
-        </svg>
+      <button class="pod-pill-btn pod-btn-publish" onclick="openPublishingModal()" title="Export SVG, PSD Layers, TIFF 300DPI, PNG, JPG">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span>Publish</span>
       </button>
 
-      <!-- Background Auto-Save Status Badge (Every 60s) -->
-      <div id="autosave-status-badge" class="autosave-badge" onclick="triggerManualAutoSave()" title="Background auto-save runs every 60 seconds. Click to save now.">
-        <span class="autosave-dot" id="autosave-dot"></span>
-        <span id="autosave-status-text" class="autosave-text">Auto-save 60s</span>
-      </div>
-
-      <!-- Save & Home Action Button -->
-      <button class="btn btn-primary" onclick="saveActiveProjectAndExit()" title="Save Artwork and Return to Home Screen">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/>
-        </svg>
-        <span>Save & Home</span>
-      </button>
-
-      <button id="toggle-coach-btn" class="btn btn-ai" onclick="toggleGeminiCoach()" title="Open Gemini Vision Coach">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2a8 8 0 0 0-8 8c0 3.37 2.11 6.27 5.12 7.4.3.06.59.18.88.35V20a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2v-2.25c.29-.17.58-.29.88-.35A8.003 8.003 0 0 0 20 10a8 8 0 0 0-8-8Z"/>
-          <line x1="9" x2="15" y1="10" y2="10"/>
-        </svg>
-        <span>Gemini Vision</span>
-      </button>
-
-      <button class="btn" onclick="exportArtwork()" title="Export PNG">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-          <polyline points="7 10 12 15 17 10"/>
-          <line x1="12" x2="12" y1="15" y2="3"/>
-        </svg>
-        <span>Export</span>
-      </button>
-
-      <!-- Workspace Mode Switcher (Minimal Mobile vs Illustrator Desktop) -->
-      <div id="workspace-mode-toggle" class="workspace-mode-badge" onclick="toggleWorkspaceMode()" title="Switch between Minimalist Mobile and Adobe Illustrator Windows Pro UI">
-        <span id="workspace-mode-icon">🖥️</span>
-        <span id="workspace-mode-text">Illustrator Pro</span>
-      </div>
-
-      <button class="btn btn-icon-only d-md-none" onclick="toggleSidebarMobile()" title="Toggle Layers Panel">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polygon points="12 2 2 7 12 12 22 7 12 2"/>
-          <polyline points="2 17 12 22 22 17"/>
-          <polyline points="2 12 12 17 22 12"/>
-        </svg>
+      <button class="pod-icon-btn" onclick="toggleRightSidebar()" title="Toggle Multi-Layer Stack (Ctrl+L)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
       </button>
     </div>
   </header>
 
-  <!-- Central Workspace & Toolbars -->
+  <!-- Central Workspace & Levitating Tool Dock -->
   <div id="workspace-container">
-    <!-- Adobe Illustrator Dual-Column Left Tool Palette -->
-    <aside id="ai-tool-palette">
-      <div class="ai-tool-row">
-        <button id="ai-tool-select" class="ai-tool-btn active" onclick="setTool('brush')" title="Selection Tool (V)"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="3 3 10 21 13 14 20 13 3 3"/></svg></button>
-        <button id="ai-tool-direct-select" class="ai-tool-btn" onclick="setTool('lasso')" title="Direct Selection Tool (A)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 3 10 21 13 14 20 13 3 3"/></svg></button>
-      </div>
-      <div class="ai-tool-row">
-        <button id="ai-tool-pen" class="ai-tool-btn" onclick="setTool('brush')" title="Pen Tool (P)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m14 2 4 4L6 18l-4 1 1-4L14 2Z"/></svg></button>
-        <button id="ai-tool-anchor" class="ai-tool-btn" onclick="setTool('brush')" title="Anchor Point Tool (Shift+C)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg></button>
-      </div>
-      <div class="ai-tool-row">
-        <button id="ai-tool-brush" class="ai-tool-btn" onclick="setTool('brush')" title="Paintbrush Tool (B)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m14 12-8.5 8.5a2.12 2.12 0 1 1-3-3L11 9"/><path d="M16 8 8 16"/></svg></button>
-        <button id="ai-tool-pencil" class="ai-tool-btn" onclick="setTool('brush')" title="Pencil Tool (N)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg></button>
-      </div>
-      <div class="ai-tool-row">
-        <button id="ai-tool-eraser" class="ai-tool-btn" onclick="setTool('eraser')" title="Eraser Tool (Shift+E)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/><path d="M22 21H7"/></svg></button>
-        <button id="ai-tool-scissors" class="ai-tool-btn" onclick="setTool('eraser')" title="Scissors Tool (C)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.8" y1="14.8" x2="20" y2="20"/></svg></button>
-      </div>
-      <div class="ai-tool-row">
-        <button id="ai-tool-rect" class="ai-tool-btn" onclick="drawPresetVectorShape('rect')" title="Rectangle Tool (M)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></button>
-        <button id="ai-tool-ellipse" class="ai-tool-btn" onclick="drawPresetVectorShape('ellipse')" title="Ellipse Tool (L)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg></button>
-      </div>
-      <div class="ai-tool-row">
-        <button id="ai-tool-polygon" class="ai-tool-btn" onclick="drawPresetVectorShape('polygon')" title="Polygon Tool"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/></svg></button>
-        <button id="ai-tool-star" class="ai-tool-btn" onclick="drawPresetVectorShape('star')" title="Star Tool"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></button>
-      </div>
-      <div class="ai-tool-row">
-        <button id="ai-tool-eyedropper" class="ai-tool-btn" onclick="setTool('eyedropper')" title="Eyedropper Tool (I)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m14 2 4 4L6 18l-4 1 1-4L14 2Z"/></svg></button>
-        <button id="ai-tool-bucket" class="ai-tool-btn" onclick="setTool('fill')" title="Live Paint Bucket (K)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 11-8-8-8.6 8.6a2 2 0 0 0 0 2.8l5.2 5.2c.8.8 2 .8 2.8 0L19 11Z"/></svg></button>
-      </div>
-      <div class="ai-tool-row">
-        <button id="ai-tool-hand" class="ai-tool-btn" onclick="setTool('brush')" title="Hand Tool (H)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg></button>
-        <button id="ai-tool-zoom" class="ai-tool-btn" onclick="zoomIn()" title="Zoom Tool (Z)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></button>
-      </div>
-
-      <!-- Overlapping Fill & Stroke Swatches -->
-      <div class="ai-swatch-overlap-container">
-        <div class="ai-swatch-swap-btn" onclick="swapFillAndStroke()" title="Swap Fill and Stroke (Shift+X)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg></div>
-        <div id="ai-palette-fill" class="ai-fill-box" onclick="togglePalettePanel()" title="Fill Color"></div>
-        <div id="ai-palette-stroke" class="ai-stroke-box" onclick="togglePalettePanel()" title="Stroke Color"></div>
-      </div>
-
-      <!-- Drawing Mode Selector (Normal vs Inside) -->
-      <div style="display: flex; gap: 3px; margin-top: 4px;">
-        <button id="ai-mode-normal" class="ai-icon-btn active" onclick="setOutlineProtection('off')" title="Draw Normal"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></button>
-        <button id="ai-mode-inside" class="ai-icon-btn" onclick="setOutlineProtection('inside')" title="Draw Inside (Smart Containment)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg></button>
-      </div>
-    </aside>
-
-    <!-- Left Drawing Toolbar -->
-    <aside id="left-toolbar" class="glass-panel">
-      <!-- Drawing Tools -->
-      <div class="tool-group">
-        <button id="tool-brush" class="tool-btn active" onclick="setTool('brush')" title="Brush (B)">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m14 12-8.5 8.5a2.12 2.12 0 1 1-3-3L11 9"/>
-            <path d="M16 8 8 16"/>
-            <path d="m18 6 3 3"/>
-            <path d="m19 5-3-3c-.7-.7-1.9-.7-2.6 0l-1.9 1.9 5.6 5.6 1.9-1.9c.7-.7.7-1.9 0-2.6Z"/>
-          </svg>
-        </button>
-
-        <button id="tool-eraser" class="tool-btn" onclick="setTool('eraser')" title="Eraser (E)">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/>
-            <path d="M22 21H7"/>
-            <path d="m5 11 9 9"/>
-          </svg>
-        </button>
-
-        <button id="tool-eyedropper" class="tool-btn" onclick="setTool('eyedropper')" title="Eyedropper (I)">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m14 2 4 4L6 18l-4 1 1-4L14 2Z"/>
-            <path d="m18 6-4-4"/>
-            <path d="m10 10 4 4"/>
-          </svg>
-        </button>
-
-        <button id="tool-fill" class="tool-btn" onclick="setTool('fill')" title="Flood Fill Bucket (G)">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m19 11-8-8-8.6 8.6a2 2 0 0 0 0 2.8l5.2 5.2c.8.8 2 .8 2.8 0L19 11Z"/>
-            <path d="m5 2 5 5"/>
-            <path d="M2 13h15"/>
-            <path d="M22 20a2 2 0 1 1-4 0c0-1.6 1.7-2.4 2-4 .3 1.6 2 2.4 2 4Z"/>
-          </svg>
-        </button>
-
-        <button id="tool-lasso" class="tool-btn" onclick="setTool('lasso')" title="Lasso Selection (L)">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M7 22a5 5 0 0 1-2-4c0-3.8 3-7 7-7a7 7 0 0 1 7 7c0 3.8-3.1 7-7 7a6.9 6.9 0 0 1-5-2Z"/>
-            <path d="M3.3 14A10 10 0 1 1 12 22"/>
-          </svg>
-        </button>
-      </div>
-
-      <div class="divider"></div>
-
-      <!-- Color Swatch & Native Picker -->
-      <div class="color-swatch-wrapper" onclick="togglePalettePanel()" title="Open Color Palette Studio (P)">
-        <div id="swatch-indicator" class="color-swatch-current"></div>
-        <input type="color" id="native-color-input" value="#06b6d4" onchange="setColor(this.value)">
-      </div>
-
-      <button id="tool-palette-btn" class="tool-btn" onclick="togglePalettePanel()" title="Color Palette Studio (P)">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/>
-          <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>
-          <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>
-          <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/>
-          <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.563-2.512 5.563-5.563C22 6.5 17.5 2 12 2Z"/>
-        </svg>
+    <!-- Levitating Vertical Squircle Left Dock: All imported tools in one frame -->
+    <aside id="studio-left-dock" class="studio-left-dock">
+      <!-- 1. Ibis Paint Inking Suite -->
+      <span class="dock-category-tag">Inking</span>
+      <button id="dock-tool-brush" class="dock-tool-btn active" onclick="setTool('brush')" title="Brush (B)">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m14 12-8.5 8.5a2.12 2.12 0 1 1-3-3L11 9"/><path d="M16 8 8 16"/><path d="m18 6 3 3"/><path d="m19 5-3-3c-.7-.7-1.9-.7-2.6 0l-1.9 1.9 5.6 5.6 1.9-1.9c.7-.7.7-1.9 0-2.6Z"/></svg>
+      </button>
+      <button id="dock-tool-eraser" class="dock-tool-btn" onclick="setTool('eraser')" title="Eraser (E)">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/><path d="M22 21H7"/></svg>
+      </button>
+      <button id="dock-tool-fill" class="dock-tool-btn" onclick="setTool('fill')" title="Flood Fill (G)">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m19 11-8-8-8.6 8.6a2 2 0 0 0 0 2.8l5.2 5.2c.8.8 2 .8 2.8 0L19 11Z"/><path d="m5 2 5 5"/></svg>
+      </button>
+      <button id="dock-tool-stabilizer" class="dock-tool-btn" onclick="cycleStabilizerLevel()" title="Stabilizer (0-10 Catmull-Rom)">
+        <span id="dock-stabilizer-val" style="font-size: 11px; font-weight: 800; color: #06b6d4;">S:5</span>
+      </button>
+      <button id="dock-tool-containment" class="dock-tool-btn" onclick="cycleOutlineContainment()" title="Lineart Smart Containment (Normal/Inside/Outside)">
+        <span id="dock-containment-badge" style="font-size: 8px; font-weight: 800; color: #a78bfa;">DRAW</span>
       </button>
 
-      <div class="divider"></div>
+      <!-- 2. Adobe Photoshop Retouch Suite -->
+      <span class="dock-category-tag" style="color: #60a5fa;">Photoshop</span>
+      <button id="dock-tool-smudge" class="dock-tool-btn" onclick="setTool('smudge')" title="Smudge Finger Tool (U)">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
+      </button>
+      <button id="dock-tool-blur" class="dock-tool-btn" onclick="setTool('blur')" title="Blur Softening Tool (R)">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      </button>
+      <button id="dock-tool-dodge" class="dock-tool-btn" onclick="setTool('dodge')" title="Dodge Tool (Lighten Highlights)">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+      <button id="dock-tool-lasso" class="dock-tool-btn" onclick="setTool('lasso')" title="Lasso Selection (L)">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 22a5 5 0 0 1-2-4c0-3.8 3-7 7-7a7 7 0 0 1 7 7c0 3.8-3.1 7-7 7a6.9 6.9 0 0 1-5-2Z"/><path d="M3.3 14A10 10 0 1 1 12 22"/></svg>
+      </button>
+      <button id="dock-tool-adjust" class="dock-tool-btn" onclick="openPhotoshopAdjustmentsModal()" title="Image Adjustments (Curves, Hue, Saturation)">
+        <span style="font-size: 10px; font-weight: 900; color: #60a5fa;">ADJ</span>
+      </button>
 
-      <!-- Brush presets / Size slider pop -->
-      <div class="tool-group">
-        <button id="tool-brush-props-btn" class="tool-btn" onclick="toggleBrushPropertiesPanel()" title="Brush Properties Panel (Size, Hardness, Flow, Spacing)">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/>
-            <line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/>
-            <line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/>
-            <line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/>
-          </svg>
-        </button>
-        <button id="tool-size-display" class="tool-btn" onclick="cycleBrushSize()" title="Toggle Quick Size">
-          <span id="brush-size-text" style="font-size: 11px; font-weight: 700;">8px</span>
+      <!-- 3. Figma Vector & Layout Suite -->
+      <span class="dock-category-tag" style="color: #fb923c;">Figma</span>
+      <button id="dock-tool-pen" class="dock-tool-btn" onclick="setTool('pen')" title="Bezier Pen Tool (P)">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m14 2 4 4L6 18l-4 1 1-4L14 2Z"/></svg>
+      </button>
+      <button id="dock-tool-shapes" class="dock-tool-btn" onclick="toggleShapesShelf()" title="Vector Shapes (Rect, Circle, Star, Arrow)">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+      </button>
+      <button id="dock-tool-align" class="dock-tool-btn" onclick="toggleAlignShelf()" title="Align & Distribute Matrix">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="21" y1="3" x2="3" y2="3"/><line x1="21" y1="21" x2="3" y2="21"/><rect x="7" y="7" width="10" height="10" rx="1"/></svg>
+      </button>
+
+      <!-- 4. Canva Assets & Elements Suite -->
+      <span class="dock-category-tag" style="color: #f472b6;">Canva</span>
+      <button id="dock-tool-stamps" class="dock-tool-btn" onclick="toggleCanvaStampsShelf()" title="Stickers, Badges & Geometric Elements">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </button>
+      <button id="dock-tool-mesh" class="dock-tool-btn" onclick="toggleGradientMeshShelf()" title="Gradient Mesh Background Presets">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+      </button>
+
+      <!-- 5. Ibis Paint Color Studio Trigger -->
+      <span class="dock-category-tag" style="color: #ec4899;">Color</span>
+      <div id="dock-color-disc-btn" class="dock-color-disc" onclick="toggleIbisColorStudio()" title="Open Ibis Paint Color Studio">
+        <div id="dock-color-fill" style="width: 100%; height: 100%; background: #06b6d4;"></div>
+      </div>
+      <span id="dock-opacity-readout" class="dock-alpha-badge">100% α</span>
+      <button class="dock-tool-btn" style="margin-top: 4px;" onclick="startEyedropperFromPalette()" title="Sample Color with Circular Zoom Loupe (I)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m14 2 4 4L6 18l-4 1 1-4L14 2Z"/><path d="m18 6-4-4"/></svg>
+      </button>
+    </aside>
+
+    <!-- Flyout Shelf: Vector Shapes (Figma) -->
+    <div id="shapes-flyout-shelf" class="dock-flyout-shelf" style="top: 240px;">
+      <span style="font-size: 10px; font-weight: 800; color: #fb923c; text-transform: uppercase;">Vector Shapes</span>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;">
+        <button class="ai-icon-btn" onclick="drawPresetVectorShape('rect')" title="Rectangle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></button>
+        <button class="ai-icon-btn" onclick="drawPresetVectorShape('ellipse')" title="Ellipse"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg></button>
+        <button class="ai-icon-btn" onclick="drawPresetVectorShape('polygon')" title="Polygon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/></svg></button>
+        <button class="ai-icon-btn" onclick="drawPresetVectorShape('star')" title="Star"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></button>
+        <button class="ai-icon-btn" onclick="drawPresetVectorShape('arrow')" title="Arrow"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+        <button class="ai-icon-btn" onclick="drawPresetVectorShape('squircle')" title="Rounded Squircle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="6"/></svg></button>
+      </div>
+    </div>
+
+    <!-- Flyout Shelf: Alignment & Distribute Matrix (Figma) -->
+    <div id="align-flyout-shelf" class="dock-flyout-shelf" style="top: 280px;">
+      <span style="font-size: 10px; font-weight: 800; color: #fb923c; text-transform: uppercase;">Align & Distribute</span>
+      <div style="display: flex; gap: 4px;">
+        <button class="ai-icon-btn" onclick="applyAlignmentCommand('left')" title="Align Left"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="3"/><rect x="8" y="6" width="12" height="4" rx="1"/><rect x="8" y="14" width="8" height="4" rx="1"/></svg></button>
+        <button class="ai-icon-btn" onclick="applyAlignmentCommand('center-h')" title="Align Center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="21" x2="12" y2="3"/><rect x="5" y="6" width="14" height="4" rx="1"/><rect x="7" y="14" width="10" height="4" rx="1"/></svg></button>
+        <button class="ai-icon-btn" onclick="applyAlignmentCommand('right')" title="Align Right"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="20" y1="21" x2="20" y2="3"/><rect x="4" y="6" width="12" height="4" rx="1"/><rect x="8" y="14" width="8" height="4" rx="1"/></svg></button>
+        <button class="ai-icon-btn" onclick="applyAlignmentCommand('top')" title="Align Top"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="4" x2="21" y2="4"/><rect x="6" y="8" width="4" height="12" rx="1"/><rect x="14" y="8" width="4" height="8" rx="1"/></svg></button>
+        <button class="ai-icon-btn" onclick="applyAlignmentCommand('distribute')" title="Distribute Evenly"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="5" width="16" height="3"/><rect x="4" y="11" width="16" height="3"/><rect x="4" y="17" width="16" height="3"/></svg></button>
+      </div>
+    </div>
+
+    <!-- Flyout Shelf: Canva Element Stamps -->
+    <div id="stamps-flyout-shelf" class="dock-flyout-shelf" style="top: 340px;">
+      <span style="font-size: 10px; font-weight: 800; color: #f472b6; text-transform: uppercase;">Canva Stamps & Stickers</span>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px;">
+        <button class="btn" style="height: 30px; font-size: 11px; padding: 0 8px;" onclick="stampCanvaGraphic('badge')">🏅 Badge</button>
+        <button class="btn" style="height: 30px; font-size: 11px; padding: 0 8px;" onclick="stampCanvaGraphic('starburst')">💥 Burst</button>
+        <button class="btn" style="height: 30px; font-size: 11px; padding: 0 8px;" onclick="stampCanvaGraphic('ribbon')">🎀 Ribbon</button>
+        <button class="btn" style="height: 30px; font-size: 11px; padding: 0 8px;" onclick="stampCanvaGraphic('frame')">🖼️ Frame</button>
+      </div>
+    </div>
+
+    <!-- Flyout Shelf: Canva Gradient Mesh Backgrounds -->
+    <div id="mesh-flyout-shelf" class="dock-flyout-shelf" style="top: 380px;">
+      <span style="font-size: 10px; font-weight: 800; color: #f472b6; text-transform: uppercase;">Gradient Mesh Presets</span>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px;">
+        <button class="btn" style="height: 28px; font-size: 10px; background: linear-gradient(135deg, #06b6d4, #8b5cf6); color: #fff;" onclick="applyGradientMeshBackground('cyberpunk')">Cyberpunk</button>
+        <button class="btn" style="height: 28px; font-size: 10px; background: linear-gradient(135deg, #f43f5e, #fbbf24); color: #fff;" onclick="applyGradientMeshBackground('sunset')">Sunset Glow</button>
+        <button class="btn" style="height: 28px; font-size: 10px; background: linear-gradient(135deg, #10b981, #06b6d4); color: #fff;" onclick="applyGradientMeshBackground('emerald')">Emerald</button>
+        <button class="btn" style="height: 28px; font-size: 10px; background: linear-gradient(135deg, #4f46e5, #ec4899); color: #fff;" onclick="applyGradientMeshBackground('neon')">Deep Neon</button>
+      </div>
+    </div>
+
+    <!-- Authentic Ibis Paint Color Studio Levitating Window -->
+    <div id="ibis-color-studio">
+      <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 8px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 16px;">🎨</span>
+          <span style="font-size: 13px; font-weight: 800; color: #fff;">Ibis Color Studio</span>
+        </div>
+        <button class="mini-icon-btn" onclick="toggleIbisColorStudio()" title="Close">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
-    </aside>
+
+      <!-- Dual Canvas HSB Wheel: 360° Outer Ring + Inner Saturation/Brightness Square -->
+      <div class="ibis-wheel-container" id="ibis-wheel-box">
+        <canvas id="ibis-hue-wheel-canvas" width="220" height="220"></canvas>
+        <canvas id="ibis-sat-val-canvas" width="104" height="104"></canvas>
+        <div id="ibis-wheel-cursor" class="ibis-wheel-cursor"></div>
+        <div id="ibis-sat-cursor" class="ibis-sat-cursor"></div>
+      </div>
+
+      <!-- Transparency (Opacity) Slider from 0% to 100% with Checkerboard Background -->
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 10px; font-weight: 800; color: #94a3b8; text-transform: uppercase;">Transparency / Opacity</span>
+          <span id="ibis-transparency-label" style="font-size: 11px; font-weight: 800; color: #06b6d4;">100%</span>
+        </div>
+        <div class="transparency-checkerboard">
+          <div class="ibis-transparency-slider-track">
+            <div id="ibis-transparency-gradient" class="ibis-transparency-gradient"></div>
+            <input type="range" id="ibis-transparency-slider" class="ibis-slider-input" min="0" max="100" value="100" oninput="setIbisColorTransparency(this.value)">
+          </div>
+        </div>
+      </div>
+
+      <!-- Color Comparison (Current vs Previous) & Hex Readout -->
+      <div class="ibis-color-comparison">
+        <div class="ibis-swatch-split" title="Current (left) vs Previous (right). Click right to restore.">
+          <div id="ibis-swatch-current" class="ibis-swatch-half" style="background: #06b6d4;"></div>
+          <div id="ibis-swatch-previous" class="ibis-swatch-half" style="background: #ffffff;" onclick="restorePreviousColor()"></div>
+        </div>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 2px;">
+          <div style="display: flex; justify-content: space-between;">
+            <span style="font-size: 9px; color: #94a3b8; font-weight: 700; text-transform: uppercase;">Hex Code</span>
+            <span id="ibis-color-name" style="font-size: 9px; color: #06b6d4; font-weight: 700;">Electric Cyan</span>
+          </div>
+          <div style="display: flex; gap: 4px; align-items: center;">
+            <input type="text" id="ibis-hex-input" value="#06B6D4" style="flex: 1; height: 26px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; color: #fff; font-size: 11px; font-weight: 800; padding: 0 6px;" onchange="setIbisColorHex(this.value)">
+            <button class="btn btn-icon-only" style="width: 26px; height: 26px; padding: 0;" onclick="startEyedropperFromPalette()" title="Sample Canvas (Loupe)">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m14 2 4 4L6 18l-4 1 1-4L14 2Z"/></svg>
+            </button>
+          </div>
+        </div>
+        <button class="btn btn-primary" style="height: 32px; padding: 0 8px; font-size: 10px; font-weight: 800;" onclick="addCurrentColorToIbisSwatches()">
+          <span>+ Add</span>
+        </button>
+      </div>
+
+      <!-- Quick Palette Swatches Bank -->
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <span style="font-size: 9px; font-weight: 700; color: #94a3b8; text-transform: uppercase;">Quick Swatches Bank</span>
+        <div id="ibis-quick-swatches" class="ibis-quick-swatches-grid">
+          <!-- Rendered swatches chips -->
+        </div>
+      </div>
+    </div>
 
     <!-- Canvas Central Viewport -->
     <main id="canvas-viewport">
@@ -4892,6 +5337,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // Initialize Palettes and Brush Studio Preview
     initPaletteSystem();
     renderBrushPreview();
+    setupIbisWheelEvents();
     
     // Initialize Projects Gallery Storage
     initProjectStorage();
@@ -5848,6 +6294,8 @@ function setColor(hex) {
   if (nativeInput) nativeInput.value = hex;
   const nameBadge = document.getElementById('palette-color-name-badge');
   if (nameBadge) nameBadge.textContent = getClosestColorName(hex);
+  const dockFill = document.getElementById('dock-color-fill');
+  if (dockFill) dockFill.style.backgroundColor = hex;
   renderBrushPreview();
   renderActivePaletteSwatches();
 }
@@ -6160,10 +6608,35 @@ function handlePointerDown(e) {
     return;
   }
 
+  if (appState.currentTool === 'pen') {
+    handlePenToolClick(coords.x, coords.y);
+    return;
+  }
+
   if (appState.currentTool === 'lasso') {
     appState.lassoPoints = [{ x: coords.x, y: coords.y }];
     appState.lassoActive = true;
     drawLassoOverlay();
+    return;
+  }
+
+  // Photoshop Retouching Tools (Direct Layer Pixel Processing)
+  if (appState.currentTool === 'smudge') {
+    appState.isDrawing = true;
+    appState.lastRetouchPos = { x: coords.x, y: coords.y };
+    executeSmudgeStep(activeLayer.ctx, coords.x, coords.y, coords.x, coords.y, e.pressure || 0.5);
+    return;
+  }
+
+  if (appState.currentTool === 'blur') {
+    appState.isDrawing = true;
+    executeBlurStep(activeLayer.ctx, coords.x, coords.y, appState.brushSize);
+    return;
+  }
+
+  if (appState.currentTool === 'dodge' || appState.currentTool === 'burn') {
+    appState.isDrawing = true;
+    executeDodgeBurnStep(activeLayer.ctx, coords.x, coords.y, appState.currentTool, e.pressure || 0.5);
     return;
   }
 
@@ -6205,6 +6678,24 @@ function handlePointerMove(e) {
   }
 
   if (!appState.isDrawing) return;
+
+  const activeLayer = getActiveLayer();
+  if (activeLayer) {
+    if (appState.currentTool === 'smudge') {
+      const last = appState.lastRetouchPos || coords;
+      executeSmudgeStep(activeLayer.ctx, last.x, last.y, coords.x, coords.y, e.pressure || 0.5);
+      appState.lastRetouchPos = { x: coords.x, y: coords.y };
+      return;
+    }
+    if (appState.currentTool === 'blur') {
+      executeBlurStep(activeLayer.ctx, coords.x, coords.y, appState.brushSize);
+      return;
+    }
+    if (appState.currentTool === 'dodge' || appState.currentTool === 'burn') {
+      executeDodgeBurnStep(activeLayer.ctx, coords.x, coords.y, appState.currentTool, e.pressure || 0.5);
+      return;
+    }
+  }
 
   // Catmull-Rom Stabilization Algorithm
   const rawPoint = { x: coords.x, y: coords.y, pressure: e.pressure || 0.5 };
@@ -6680,15 +7171,534 @@ function toggleBrushPropertiesPanel() {
 }
 
 function togglePalettePanel() {
-  const panel = document.getElementById('color-palette-panel');
-  if (!panel) return;
-  const isHidden = panel.style.display === 'none';
-  panel.style.display = isHidden ? 'flex' : 'none';
-  const btn = document.getElementById('tool-palette-btn');
-  if (btn) btn.classList.toggle('active', isHidden);
-  if (isHidden) {
-    renderActivePaletteSwatches();
+  toggleIbisColorStudio();
+}
+
+// =============================================================================
+// AUTHENTIC IBIS PAINT COLOR STUDIO & LEVITATING CONTROLS ENGINE
+// =============================================================================
+
+const ibisColor = {
+  hue: 187,
+  sat: 0.97,
+  val: 0.83,
+  alpha: 1.0,
+  previousHex: '#FFFFFF',
+  isDraggingHue: false,
+  isDraggingSat: false,
+  quickSwatches: [
+    '#06B6D4', '#8B5CF6', '#EC4899', '#F43F5E', '#F97316', '#EAB308',
+    '#10B981', '#3B82F6', '#6366F1', '#A855F7', '#D946EF', '#FFFFFF',
+    '#94A3B8', '#475569', '#1E293B', '#0F172A', '#000000', '#FFEDD5'
+  ]
+};
+
+function hsvToRgb(h, s, v) {
+  let r, g, b;
+  const i = Math.floor((h / 60) % 6);
+  const f = h / 60 - i;
+  const p = v * (1 - s);
+  const q = v * (1 - f * s);
+  const t = v * (1 - (1 - f) * s);
+  switch (i) {
+    case 0: r = v; g = t; b = p; break;
+    case 1: r = q; g = v; b = p; break;
+    case 2: r = p; g = v; b = t; break;
+    case 3: r = p; g = q; b = v; break;
+    case 4: r = t; g = p; b = v; break;
+    case 5: r = v; g = p; b = q; break;
+    default: r = v; g = t; b = p; break;
   }
+  return {
+    r: Math.round(r * 255),
+    g: Math.round(g * 255),
+    b: Math.round(b * 255)
+  };
+}
+
+function rgbToHexStr(r, g, b) {
+  return '#' + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('').toUpperCase();
+}
+
+function hexToHsv(hex) {
+  const rgb = hexToRgb(hex);
+  const r = rgb.r / 255, g = rgb.g / 255, b = rgb.b / 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b);
+  const d = max - min;
+  let h = 0;
+  const s = max === 0 ? 0 : d / max;
+  const v = max;
+  if (max !== min) {
+    switch (max) {
+      case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+      case g: h = (b - r) / d + 2; break;
+      case b: h = (r - g) / d + 4; break;
+    }
+    h /= 6;
+  }
+  return { h: Math.round(h * 360), s, v };
+}
+
+function drawIbisHueWheel() {
+  const canvas = document.getElementById('ibis-hue-wheel-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const cx = 110, cy = 110, outerR = 105, innerR = 76;
+  ctx.clearRect(0, 0, 220, 220);
+
+  for (let angle = 0; angle < 360; angle += 1) {
+    const rad1 = (angle - 0.5) * Math.PI / 180;
+    const rad2 = (angle + 1.5) * Math.PI / 180;
+    ctx.beginPath();
+    ctx.arc(cx, cy, outerR, rad1, rad2, false);
+    ctx.arc(cx, cy, innerR, rad2, rad1, true);
+    ctx.closePath();
+    ctx.fillStyle = `hsl(${angle}, 100%, 50%)`;
+    ctx.fill();
+  }
+
+  // Position hue cursor
+  const hueRad = (ibisColor.hue) * Math.PI / 180;
+  const midR = (outerR + innerR) / 2;
+  const cursorX = cx + Math.cos(hueRad) * midR;
+  const cursorY = cy + Math.sin(hueRad) * midR;
+  const cursor = document.getElementById('ibis-wheel-cursor');
+  if (cursor) {
+    cursor.style.left = cursorX + 'px';
+    cursor.style.top = cursorY + 'px';
+  }
+}
+
+function drawIbisSatValBox() {
+  const canvas = document.getElementById('ibis-sat-val-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, 104, 104);
+
+  // Horizontal gradient: white to pure hue
+  const gradH = ctx.createLinearGradient(0, 0, 104, 0);
+  gradH.addColorStop(0, '#ffffff');
+  gradH.addColorStop(1, `hsl(${ibisColor.hue}, 100%, 50%)`);
+  ctx.fillStyle = gradH;
+  ctx.fillRect(0, 0, 104, 104);
+
+  // Vertical gradient: transparent to black
+  const gradV = ctx.createLinearGradient(0, 0, 0, 104);
+  gradV.addColorStop(0, 'rgba(0,0,0,0)');
+  gradV.addColorStop(1, 'rgba(0,0,0,1)');
+  ctx.fillStyle = gradV;
+  ctx.fillRect(0, 0, 104, 104);
+
+  // Position sat/val cursor
+  const cursorX = ibisColor.sat * 104;
+  const cursorY = (1 - ibisColor.val) * 104;
+  const cursor = document.getElementById('ibis-sat-cursor');
+  if (cursor) {
+    cursor.style.left = (110 - 52 + cursorX) + 'px';
+    cursor.style.top = (110 - 52 + cursorY) + 'px';
+  }
+}
+
+function updateIbisColorFromHsv() {
+  const rgb = hsvToRgb(ibisColor.hue, ibisColor.sat, ibisColor.val);
+  const hex = rgbToHexStr(rgb.r, rgb.g, rgb.b);
+
+  setColor(hex);
+
+  // Update Ibis Studio specific elements
+  const currentBox = document.getElementById('ibis-swatch-current');
+  if (currentBox) currentBox.style.background = hex;
+  const dockFill = document.getElementById('dock-color-fill');
+  if (dockFill) dockFill.style.background = hex;
+  const hexInput = document.getElementById('ibis-hex-input');
+  if (hexInput && document.activeElement !== hexInput) hexInput.value = hex;
+  const nameLabel = document.getElementById('ibis-color-name');
+  if (nameLabel) nameLabel.textContent = getClosestColorName(hex);
+
+  // Update Transparency gradient track
+  const gradEl = document.getElementById('ibis-transparency-gradient');
+  if (gradEl) {
+    gradEl.style.background = `linear-gradient(to right, rgba(${rgb.r},${rgb.g},${rgb.b},0), rgba(${rgb.r},${rgb.g},${rgb.b},1))`;
+  }
+
+  drawIbisHueWheel();
+  drawIbisSatValBox();
+}
+
+function setIbisColorTransparency(val) {
+  const num = Math.max(0, Math.min(100, parseInt(val, 10) || 0));
+  ibisColor.alpha = num / 100.0;
+  appState.brushOpacity = ibisColor.alpha;
+
+  const label = document.getElementById('ibis-transparency-label');
+  if (label) label.textContent = `${num}%`;
+  const dockReadout = document.getElementById('dock-opacity-readout');
+  if (dockReadout) dockReadout.textContent = `${num}% α`;
+}
+
+function toggleIbisColorStudio() {
+  const studio = document.getElementById('ibis-color-studio');
+  if (!studio) return;
+  const isHidden = studio.style.display === 'none' || !studio.style.display;
+  studio.style.display = isHidden ? 'flex' : 'none';
+
+  if (isHidden) {
+    setupIbisWheelEvents();
+    ibisColor.previousHex = appState.brushColor || '#06B6D4';
+    const prevSwatch = document.getElementById('ibis-swatch-previous');
+    if (prevSwatch) prevSwatch.style.background = ibisColor.previousHex;
+
+    const currentAlpha = Math.round((appState.brushOpacity !== undefined ? appState.brushOpacity : 1) * 100);
+    const slider = document.getElementById('ibis-transparency-slider');
+    if (slider) slider.value = currentAlpha;
+    setIbisColorTransparency(currentAlpha);
+
+    const hsv = hexToHsv(appState.brushColor || '#06B6D4');
+    ibisColor.hue = hsv.h;
+    ibisColor.sat = hsv.s;
+    ibisColor.val = hsv.v;
+    updateIbisColorFromHsv();
+    renderIbisQuickSwatches();
+  }
+}
+
+function restorePreviousColor() {
+  if (!ibisColor.previousHex) return;
+  const hsv = hexToHsv(ibisColor.previousHex);
+  ibisColor.hue = hsv.h;
+  ibisColor.sat = hsv.s;
+  ibisColor.val = hsv.v;
+  updateIbisColorFromHsv();
+  showToast(`Restored: ${ibisColor.previousHex}`);
+}
+
+function setIbisColorHex(hexStr) {
+  if (!hexStr) return;
+  let clean = hexStr.trim();
+  if (!clean.startsWith('#')) clean = '#' + clean;
+  if (/^#[0-9A-Fa-f]{6}$/.test(clean)) {
+    const hsv = hexToHsv(clean);
+    ibisColor.hue = hsv.h;
+    ibisColor.sat = hsv.s;
+    ibisColor.val = hsv.v;
+    updateIbisColorFromHsv();
+  }
+}
+
+function addCurrentColorToIbisSwatches() {
+  const hex = appState.brushColor || '#06B6D4';
+  if (!ibisColor.quickSwatches.includes(hex)) {
+    ibisColor.quickSwatches.unshift(hex);
+    if (ibisColor.quickSwatches.length > 24) ibisColor.quickSwatches.pop();
+    renderIbisQuickSwatches();
+    showToast(`Added ${hex} to Ibis Swatches`);
+  }
+}
+
+function renderIbisQuickSwatches() {
+  const grid = document.getElementById('ibis-quick-swatches');
+  if (!grid) return;
+  grid.innerHTML = '';
+  ibisColor.quickSwatches.forEach(hex => {
+    const chip = document.createElement('div');
+    chip.className = 'ibis-swatch-chip';
+    chip.style.backgroundColor = hex;
+    chip.title = `${hex} (${getClosestColorName(hex)})`;
+    chip.onclick = () => {
+      const hsv = hexToHsv(hex);
+      ibisColor.hue = hsv.h;
+      ibisColor.sat = hsv.s;
+      ibisColor.val = hsv.v;
+      updateIbisColorFromHsv();
+    };
+    grid.appendChild(chip);
+  });
+}
+
+function setupIbisWheelEvents() {
+  const wheelBox = document.getElementById('ibis-wheel-box');
+  if (!wheelBox) return;
+  if (wheelBox.dataset.eventsBound === 'true') return;
+  wheelBox.dataset.eventsBound = 'true';
+
+  const handleHuePointer = (e) => {
+    const rect = wheelBox.getBoundingClientRect();
+    const x = e.clientX - rect.left - 110;
+    const y = e.clientY - rect.top - 110;
+    const angle = (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
+    ibisColor.hue = Math.round(angle);
+    updateIbisColorFromHsv();
+  };
+
+  const handleSatPointer = (e) => {
+    const canvas = document.getElementById('ibis-sat-val-canvas');
+    if (!canvas) return;
+    const rect = canvas.getBoundingClientRect();
+    const x = Math.max(0, Math.min(104, e.clientX - rect.left));
+    const y = Math.max(0, Math.min(104, e.clientY - rect.top));
+    ibisColor.sat = x / 104;
+    ibisColor.val = 1 - (y / 104);
+    updateIbisColorFromHsv();
+  };
+
+  const hueCanvas = document.getElementById('ibis-hue-wheel-canvas');
+  if (hueCanvas) {
+    hueCanvas.addEventListener('pointerdown', (e) => {
+      ibisColor.isDraggingHue = true;
+      hueCanvas.setPointerCapture(e.pointerId);
+      handleHuePointer(e);
+    });
+    hueCanvas.addEventListener('pointermove', (e) => {
+      if (ibisColor.isDraggingHue) handleHuePointer(e);
+    });
+    const stopHue = (e) => {
+      if (ibisColor.isDraggingHue) {
+        ibisColor.isDraggingHue = false;
+        try { hueCanvas.releasePointerCapture(e.pointerId); } catch(_) {}
+      }
+    };
+    hueCanvas.addEventListener('pointerup', stopHue);
+    hueCanvas.addEventListener('pointercancel', stopHue);
+  }
+
+  const satCanvas = document.getElementById('ibis-sat-val-canvas');
+  if (satCanvas) {
+    satCanvas.addEventListener('pointerdown', (e) => {
+      ibisColor.isDraggingSat = true;
+      satCanvas.setPointerCapture(e.pointerId);
+      handleSatPointer(e);
+    });
+    satCanvas.addEventListener('pointermove', (e) => {
+      if (ibisColor.isDraggingSat) handleSatPointer(e);
+    });
+    const stopSat = (e) => {
+      if (ibisColor.isDraggingSat) {
+        ibisColor.isDraggingSat = false;
+        try { satCanvas.releasePointerCapture(e.pointerId); } catch(_) {}
+      }
+    };
+    satCanvas.addEventListener('pointerup', stopSat);
+    satCanvas.addEventListener('pointercancel', stopSat);
+  }
+}
+
+// =============================================================================
+// ADVANCED CONTROLS: PHOTOSHOP RETOUCH, FIGMA VECTOR & CANVA STAMPS
+// =============================================================================
+
+function cycleStabilizerLevel() {
+  const levels = [0, 2, 5, 8, 10];
+  const current = appState.stabilizationLevel || 0;
+  const nextIdx = (levels.indexOf(current) + 1) % levels.length;
+  appState.stabilizationLevel = levels[nextIdx];
+  const badge = document.getElementById('dock-stabilizer-val');
+  if (badge) badge.textContent = `S:${appState.stabilizationLevel}`;
+  showToast(`Stabilizer: Level ${appState.stabilizationLevel}`);
+}
+
+function cycleOutlineContainment() {
+  const modes = ['off', 'inside', 'outside'];
+  const current = appState.outlineProtection || 'off';
+  const nextIdx = (modes.indexOf(current) + 1) % modes.length;
+  setOutlineProtection(modes[nextIdx]);
+  const badge = document.getElementById('dock-containment-badge');
+  if (badge) badge.textContent = modes[nextIdx].toUpperCase();
+}
+
+function cycleSymmetryMode() {
+  const modes = ['off', 'mirror-x', 'mirror-y', 'radial'];
+  const current = appState.symmetryMode || 'off';
+  const nextIdx = (modes.indexOf(current) + 1) % modes.length;
+  appState.symmetryMode = modes[nextIdx];
+  const btn = document.getElementById('pod-sym-btn');
+  if (btn) btn.classList.toggle('active', appState.symmetryMode !== 'off');
+  showToast(`Symmetry: ${appState.symmetryMode.toUpperCase()}`);
+}
+
+function toggleCanvasGridOverlay() {
+  appState.showGrid = !appState.showGrid;
+  const btn = document.getElementById('pod-grid-btn');
+  if (btn) btn.classList.toggle('active', appState.showGrid);
+  drawOverlayGuides();
+  showToast(appState.showGrid ? "Snapping Grid Enabled" : "Grid Disabled");
+}
+
+function toggleCanvasRulers() {
+  appState.showRulers = !appState.showRulers;
+  const btn = document.getElementById('pod-rulers-btn');
+  if (btn) btn.classList.toggle('active', appState.showRulers);
+  drawOverlayGuides();
+  showToast(appState.showRulers ? "Rulers Visible" : "Rulers Hidden");
+}
+
+function toggleShapesShelf() {
+  closeAllDockShelves('shapes-flyout-shelf');
+  const shelf = document.getElementById('shapes-flyout-shelf');
+  if (shelf) shelf.classList.toggle('show');
+}
+
+function toggleAlignShelf() {
+  closeAllDockShelves('align-flyout-shelf');
+  const shelf = document.getElementById('align-flyout-shelf');
+  if (shelf) shelf.classList.toggle('show');
+}
+
+function toggleCanvaStampsShelf() {
+  closeAllDockShelves('stamps-flyout-shelf');
+  const shelf = document.getElementById('stamps-flyout-shelf');
+  if (shelf) shelf.classList.toggle('show');
+}
+
+function toggleGradientMeshShelf() {
+  closeAllDockShelves('mesh-flyout-shelf');
+  const shelf = document.getElementById('mesh-flyout-shelf');
+  if (shelf) shelf.classList.toggle('show');
+}
+
+function closeAllDockShelves(excludeId) {
+  ['shapes-flyout-shelf', 'align-flyout-shelf', 'stamps-flyout-shelf', 'mesh-flyout-shelf'].forEach(id => {
+    if (id !== excludeId) {
+      const el = document.getElementById(id);
+      if (el) el.classList.remove('show');
+    }
+  });
+}
+
+function executeSmudgeStep(ctx, x1, y1, x2, y2, pressure) {
+  const r = Math.max(4, appState.brushSize * 0.7);
+  try {
+    ctx.save();
+    ctx.globalAlpha = Math.max(0.1, Math.min(0.5, 0.35 * pressure));
+    ctx.imageSmoothingEnabled = true;
+    ctx.drawImage(ctx.canvas, x1 - r, y1 - r, r * 2, r * 2, x2 - r, y2 - r, r * 2, r * 2);
+    ctx.restore();
+  } catch (_) {}
+}
+
+function executeBlurStep(ctx, x, y, size) {
+  const r = Math.max(6, size * 0.8);
+  try {
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.clip();
+    ctx.filter = 'blur(3px)';
+    ctx.drawImage(ctx.canvas, 0, 0);
+    ctx.restore();
+  } catch (_) {}
+}
+
+function executeDodgeBurnStep(ctx, x, y, mode, pressure) {
+  const r = Math.max(2, appState.brushSize / 2);
+  ctx.save();
+  if (mode === 'dodge') {
+    ctx.globalCompositeOperation = 'color-dodge';
+    ctx.fillStyle = `rgba(255, 255, 255, ${0.15 * pressure})`;
+  } else {
+    ctx.globalCompositeOperation = 'color-burn';
+    ctx.fillStyle = `rgba(0, 0, 0, ${0.2 * pressure})`;
+  }
+  ctx.beginPath();
+  ctx.arc(x, y, r, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+}
+
+function handlePenToolClick(x, y) {
+  if (!appState.penNodes) appState.penNodes = [];
+  appState.penNodes.push({ x, y });
+  
+  const layer = getActiveLayer();
+  if (layer && appState.penNodes.length >= 2) {
+    layer.ctx.save();
+    layer.ctx.strokeStyle = appState.brushColor || '#06B6D4';
+    layer.ctx.lineWidth = appState.brushSize || 4;
+    layer.ctx.lineCap = 'round';
+    layer.ctx.lineJoin = 'round';
+    layer.ctx.beginPath();
+    const p1 = appState.penNodes[appState.penNodes.length - 2];
+    const p2 = appState.penNodes[appState.penNodes.length - 1];
+    layer.ctx.moveTo(p1.x, p1.y);
+    layer.ctx.lineTo(p2.x, p2.y);
+    layer.ctx.stroke();
+    layer.ctx.restore();
+  }
+  showToast(`Vector Node Added (${appState.penNodes.length})`);
+}
+
+function stampCanvaGraphic(type) {
+  closeAllDockShelves();
+  const layer = getActiveLayer();
+  if (!layer) return;
+  pushUndoState();
+  const ctx = layer.ctx;
+  const cx = CANVAS_WIDTH / 2;
+  const cy = CANVAS_HEIGHT / 2;
+  ctx.save();
+  ctx.fillStyle = appState.brushColor || '#06B6D4';
+  ctx.strokeStyle = '#ffffff';
+  ctx.lineWidth = 3;
+
+  if (type === 'badge') {
+    ctx.beginPath();
+    ctx.arc(cx, cy, 75, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+  } else if (type === 'starburst') {
+    ctx.beginPath();
+    for (let i = 0; i < 16; i++) {
+      const r = i % 2 === 0 ? 80 : 45;
+      const a = (i * Math.PI) / 8;
+      const x = cx + Math.cos(a) * r;
+      const y = cy + Math.sin(a) * r;
+      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+  } else if (type === 'ribbon') {
+    ctx.fillRect(cx - 100, cy - 25, 200, 50);
+    ctx.strokeRect(cx - 100, cy - 25, 200, 50);
+  } else if (type === 'frame') {
+    ctx.strokeRect(60, 60, CANVAS_WIDTH - 120, CANVAS_HEIGHT - 120);
+  }
+  ctx.restore();
+  showToast(`Canva ${type.toUpperCase()} Stamped!`);
+}
+
+function applyGradientMeshBackground(preset) {
+  closeAllDockShelves();
+  const layer = getActiveLayer();
+  if (!layer) return;
+  pushUndoState();
+  const ctx = layer.ctx;
+  ctx.save();
+  const grad = ctx.createLinearGradient(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+  if (preset === 'cyberpunk') {
+    grad.addColorStop(0, '#06b6d4');
+    grad.addColorStop(0.5, '#3b82f6');
+    grad.addColorStop(1, '#8b5cf6');
+  } else if (preset === 'sunset') {
+    grad.addColorStop(0, '#f43f5e');
+    grad.addColorStop(0.6, '#fb923c');
+    grad.addColorStop(1, '#fbbf24');
+  } else if (preset === 'emerald') {
+    grad.addColorStop(0, '#10b981');
+    grad.addColorStop(1, '#06b6d4');
+  } else {
+    grad.addColorStop(0, '#1e1b4b');
+    grad.addColorStop(0.5, '#4f46e5');
+    grad.addColorStop(1, '#ec4899');
+  }
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+  ctx.restore();
+  showToast(`Applied ${preset.toUpperCase()} Gradient Mesh!`);
+}
+
+function openPhotoshopAdjustmentsModal() {
+  openDesignHubModal();
+  showToast("Image Adjustments Matrix");
 }
 
 function setupDraggablePanels() {

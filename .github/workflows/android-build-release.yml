@@ -13,10 +13,29 @@ on:
       - master
   workflow_dispatch:
     inputs:
-      release_notes:
-        description: 'Optional manual release notes'
+      build_target:
+        description: 'Build Target'
+        required: true
+        type: choice
+        default: 'all'
+        options:
+          - 'all'
+          - 'release_only'
+          - 'debug_only'
+      run_tests:
+        description: 'Run Unit & Robolectric Tests before build'
+        required: true
+        type: boolean
+        default: true
+      publish_release:
+        description: 'Publish as GitHub Release (even if not triggered by tag)'
         required: false
-        default: 'Automated release build from GitHub Actions'
+        type: boolean
+        default: false
+      release_notes:
+        description: 'Custom Release Notes'
+        required: false
+        default: 'Manual production build triggered from GitHub Actions tab'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -24,7 +43,7 @@ concurrency:
 
 jobs:
   test-and-build:
-    name: Test & Build APKs
+    name: Build & Publish APKs
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
@@ -45,15 +64,20 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-          cache: 'gradle'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: ${{ github.ref != 'refs/heads/main' && github.ref != 'refs/heads/master' }}
 
       - name: Grant Execute Permission to Gradlew
         run: chmod +x gradlew
 
       - name: Run Unit & Robolectric Tests
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.run_tests }}
         run: ./gradlew testDebugUnitTest --continue --stacktrace
 
-      - name: Upload Test Results
+      - name: Upload Test Reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -61,7 +85,7 @@ jobs:
           path: app/build/reports/tests/testDebugUnitTest/
           retention-days: 7
 
-      - name: Determine Release Version
+      - name: Determine Version
         id: versioning
         run: |
           if [[ "${{ github.ref }}" == refs/tags/v* ]]; then
@@ -75,26 +99,34 @@ jobs:
             echo "Building with default centralized version from gradle.properties"
           fi
 
-      - name: Build Debug & Release APKs
+      - name: Compile Selected Targets
         run: |
           VERSION_ARGS=""
           if [ -n "${{ steps.versioning.outputs.version_name }}" ]; then
             VERSION_ARGS="-Papp.version.name=${{ steps.versioning.outputs.version_name }} -Papp.version.code=${{ steps.versioning.outputs.version_code }}"
           fi
-          ./gradlew assembleDebug assembleRelease $VERSION_ARGS --stacktrace
 
-      - name: Stage APK Artifacts
+          BUILD_TARGET="${{ inputs.build_target || 'all' }}"
+          if [ "$BUILD_TARGET" = "release_only" ]; then
+            ./gradlew assembleRelease $VERSION_ARGS --stacktrace
+          elif [ "$BUILD_TARGET" = "debug_only" ]; then
+            ./gradlew assembleDebug $VERSION_ARGS --stacktrace
+          else
+            ./gradlew assembleDebug assembleRelease $VERSION_ARGS --stacktrace
+          fi
+
+      - name: Stage APK Artifacts & Checksums
         id: stage-apks
         run: |
           mkdir -p build-artifacts
           
-          # Copy debug APK if exists
+          # Copy debug APK if produced
           if [ -f "app/build/outputs/apk/debug/app-debug.apk" ]; then
             cp app/build/outputs/apk/debug/app-debug.apk build-artifacts/AetherStudio-Elite-debug.apk
             echo "debug_apk_found=true" >> $GITHUB_OUTPUT
           fi
           
-          # Copy release APK if exists
+          # Copy release APK if produced
           if [ -f "app/build/outputs/apk/release/app-release-unsigned.apk" ]; then
             cp app/build/outputs/apk/release/app-release-unsigned.apk build-artifacts/AetherStudio-Elite-release-unsigned.apk
             echo "release_apk_found=true" >> $GITHUB_OUTPUT
@@ -102,38 +134,61 @@ jobs:
             cp app/build/outputs/apk/release/app-release.apk build-artifacts/AetherStudio-Elite-release.apk
             echo "release_apk_found=true" >> $GITHUB_OUTPUT
           fi
+
+          # Generate SHA-256 checksums
+          cd build-artifacts
+          sha256sum *.apk > checksums.sha256
+          cd ..
           
+          echo "Staged APKs and Checksums:"
           ls -lah build-artifacts/
 
-      - name: Upload APKs to GitHub Actions Run
+      - name: Upload Artifacts to GitHub Actions Run
         uses: actions/upload-artifact@v4
         with:
-          name: aetherstudio-elite-apks
+          name: aetherstudio-elite-binaries
           path: build-artifacts/*
           retention-days: 30
 
-      - name: Create GitHub Release on Tag
-        if: startsWith(github.ref, 'refs/tags/v')
+      - name: Determine if Release Should Publish
+        id: should-publish
+        run: |
+          if [[ "${{ github.ref }}" == refs/tags/v* ]] || [ "${{ inputs.publish_release }}" = "true" ]; then
+            echo "publish=true" >> $GITHUB_OUTPUT
+          else
+            echo "publish=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Publish GitHub Release
+        if: steps.should-publish.outputs.publish == 'true'
         uses: softprops/action-gh-release@v2
         with:
           files: build-artifacts/*
           generate_release_notes: true
-          name: AetherStudio Elite ${{ github.ref_name }}
+          tag_name: ${{ startsWith(github.ref, 'refs/tags/v') && github.ref_name || format('v1.0.{0}', github.run_number) }}
+          name: AetherStudio Elite ${{ startsWith(github.ref, 'refs/tags/v') && github.ref_name || format('v1.0.{0}', github.run_number) }}
           body: |
-            ## ✨ AetherStudio Elite Release ${{ github.ref_name }}
+            ## 🎨 AetherStudio Elite Production Release
+
+            Automated build produced by GitHub Actions CI/CD Pipeline.
+
+            ### 📦 Downloadable Assets
+            - **`AetherStudio-Elite-debug.apk`**: Pre-signed debug APK ready for immediate sideloading and testing on Android 7.0+ (API 24+) devices.
+            - **`AetherStudio-Elite-release-unsigned.apk`**: Production-optimized release APK (sign with your keystore prior to Play Store / F-Droid distribution).
+            - **`checksums.sha256`**: Cryptographic integrity checksums for verification.
+
+            ### 🚀 Features & Capabilities
+            - **All-in-One Levitating Studio Pod**: Cyberpunk Glassmorphism pod with neon cyan & violet glow, unifying all tools in one frame without separated modes.
+            - **Authentic Ibis Paint Color Studio**: 360° circular HSB wheel, square Saturation/Brightness gradient box, and 0%–100% Alpha Transparency Slider with live checkerboard preview.
+            - **Inking Brush Engine**: Dip Pen, Felt Tip, Watercolor, Airbrush, Screentone, Catmull-Rom stabilizer (0–10), and Lineart Smart Containment.
+            - **Adobe Photoshop Retouch Suite**: Smudge, Blur, Dodge, Burn, Lasso selection, and Image Adjustments matrix.
+            - **Figma Vector Engine**: Bezier Pen tool with anchor nodes, vector shapes, and Alignment/Distribution bar.
+            - **Canva Asset Suite**: Graphic element stamps, gradient mesh generator, and frame presets.
+            - **Multi-Format Export Studio**: Native Android Scoped Storage publishing to **SVG Vector Paths**, **Photoshop PSD (Layers)**, **TIFF 300 DPI**, PNG, and WebP.
+
+            ---
+            *Built with JDK 17, Android SDK 36, Kotlin 2.0.21, and Jetpack Compose.*
             
-            Automated production build generated by GitHub Actions.
-            
-            ### 📦 Included Artifacts
-            - **`AetherStudio-Elite-debug.apk`**: Pre-signed debug build ready for direct side-loading on Android devices.
-            - **`AetherStudio-Elite-release-unsigned.apk`**: Production release build (sign with your keystore before Google Play submission).
-            
-            ### 🚀 Highlights
-            - Dual-Mode Creative Workspace (Minimalist Mobile/Tablet & Adobe Illustrator Pro Desktop).
-            - Multi-format publication engine: **SVG Vector**, **Photoshop PSD (Layers)**, **TIFF 300 DPI**, PNG, and JPEG.
-            - Gemini AI Artistic Vision Coach & Layer Diagnostics.
-            - Catmull-Rom exponential brush stabilization and Ibis-grade smart lineart containment.
-            
-            ${{ github.event.inputs.release_notes }}
+            ${{ inputs.release_notes }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
