@@ -1,0 +1,6 @@
+{
+  "name": "AetherStudio Elite",
+  "description": "Professional drawing engine, vector layout hub, keyframe animation timeline, and Gemini Vision Coach.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
