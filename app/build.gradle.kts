@@ -8,6 +8,16 @@ plugins {
   alias(libs.plugins.google.services)
 }
 
+// Centralized Versioning Strategy for Local Builds, CI/CD, and GitHub Releases
+val appVersionCode: Int = providers.gradleProperty("app.version.code")
+    .orElse(providers.environmentVariable("APP_VERSION_CODE"))
+    .getOrElse("1")
+    .toInt()
+
+val appVersionName: String = providers.gradleProperty("app.version.name")
+    .orElse(providers.environmentVariable("APP_VERSION_NAME"))
+    .getOrElse("1.0.0")
+
 android {
   namespace = "com.example"
   compileSdk { version = release(36) { minorApiLevel = 1 } }
@@ -16,8 +26,8 @@ android {
     applicationId = "com.aistudio.aetherstudio.elitez"
     minSdk = 24
     targetSdk = 36
-    versionCode = 1
-    versionName = "1.0"
+    versionCode = appVersionCode
+    versionName = appVersionName
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
